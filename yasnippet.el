@@ -146,7 +146,7 @@
 (defvar yas/load-file-name load-file-name
   "Store the filename that yasnippet.el was originally loaded from.")
 (defcustom yas/snippet-dirs (remove nil
-                                    (list "~/.emacs.d/snippets"
+                                    (list "~/.emacs.d/plugins/yasnippet/snippets"
                                           (when yas/load-file-name
                                             (concat (file-name-directory yas/load-file-name) "snippets"))))
   "Directory or list of snippet dirs for each major mode.
@@ -2337,7 +2337,7 @@ where snippets of table might exist."
   (let ((main-dir (replace-regexp-in-string
                    "/+$" ""
                    (or (first (or (yas/snippet-dirs)
-                                  (setq yas/snippet-dirs '("~/.emacs.d/snippets")))))))
+                                  (setq yas/snippet-dirs '("~/.emacs.d/plugins/yasnippet/snippets")))))))
         (tables (or (and table
                          (list table))
                     (yas/get-snippet-tables))))
